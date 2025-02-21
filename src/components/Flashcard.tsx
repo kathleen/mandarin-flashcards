@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FlashcardData } from '../types';
 
 interface FlashcardProps {
@@ -9,6 +9,12 @@ interface FlashcardProps {
 const Flashcard: React.FC<FlashcardProps> = ({ card, onAnswer }) => {
   const [showHint, setShowHint] = useState(false);
   const [answer, setAnswer] = useState('');
+  
+  // Reset state when a new card is presented
+  useEffect(() => {
+    setShowHint(false);
+    setAnswer('');
+  }, [card]);
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
