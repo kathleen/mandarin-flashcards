@@ -9,25 +9,70 @@ const PORT = process.env.PORT || 8000;
 // Sample flashcard data
 const flashcards: FlashcardData[] = [
   { id: 1, character: '你好', pinyin: 'nǐ hǎo', english: 'hello' },
-  { id: 2, character: '谢谢', pinyin: 'xiè xiè', english: 'thank you' },
-  { id: 3, character: '再见', pinyin: 'zài jiàn', english: 'goodbye' },
-  { id: 4, character: '是', pinyin: 'shì', english: 'yes' },
-  { id: 5, character: '不是', pinyin: 'bú shì', english: 'no' },
-  { id: 6, character: '对不起', pinyin: 'duì bù qǐ', english: 'sorry' },
-  { id: 7, character: '没关系', pinyin: 'méi guān xì', english: "it's okay" },
-  { id: 8, character: '吃饭', pinyin: 'chī fàn', english: 'eat food' },
-  { id: 9, character: '喝水', pinyin: 'hē shuǐ', english: 'drink water' },
-  { id: 10, character: '学习', pinyin: 'xué xí', english: 'study' },
-  { id: 11, character: '工作', pinyin: 'gōng zuò', english: 'work' },
-  { id: 12, character: '朋友', pinyin: 'péng yǒu', english: 'friend' },
-  { id: 13, character: '家人', pinyin: 'jiā rén', english: 'family' },
-  { id: 14, character: '时间', pinyin: 'shí jiān', english: 'time' },
-  { id: 15, character: '今天', pinyin: 'jīn tiān', english: 'today' },
-  { id: 16, character: '明天', pinyin: 'míng tiān', english: 'tomorrow' },
-  { id: 17, character: '昨天', pinyin: 'zuó tiān', english: 'yesterday' },
-  { id: 18, character: '钱', pinyin: 'qián', english: 'money' },
-  { id: 19, character: '手机', pinyin: 'shǒu jī', english: 'mobile phone' },
+  { id: 2, character: '再见', pinyin: 'zài jiàn', english: 'goodbye' },
+  { id: 3, character: '是', pinyin: 'shì', english: 'yes' },
+  { id: 4, character: '不是', pinyin: 'bú shì', english: 'no' },
+  { id: 5, character: '对不起', pinyin: 'duì bù qǐ', english: 'sorry' },
+  { id: 6, character: '没关系', pinyin: 'méi guān xì', english: "it's okay" },
+  { id: 7, character: '吃饭', pinyin: 'chī fàn', english: 'eat food' },
+  { id: 8, character: '喝水', pinyin: 'hē shuǐ', english: 'drink water' },
+  { id: 9, character: '学习', pinyin: 'xué xí', english: 'study' },
+  { id: 10, character: '工作', pinyin: 'gōng zuò', english: 'work' },
+  { id: 11, character: '朋友', pinyin: 'péng yǒu', english: 'friend' },
+  { id: 12, character: '家人', pinyin: 'jiā rén', english: 'family' },
+  { id: 13, character: '时间', pinyin: 'shí jiān', english: 'time' },
+  { id: 14, character: '钱', pinyin: 'qián', english: 'money' },
+  { id: 15, character: '手机', pinyin: 'shǒu jī', english: 'mobile phone' },
+  { id: 16, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  /* TODO: Lesson 1 */
+/* TODO: Lesson 2 */
+/* TODO: Lesson 3 */
+/* TODO: Lesson 4 */
+/**
   { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+  { id: 20, character: '电脑', pinyin: 'diàn nǎo', english: 'computer' },
+
+ * 班	class			bān
+多少	how many		duō shao
+学习	study			xuéxí
+学	study			xué
+汉语	Chinese		Hànyǔ
+语	language		yǔ
+英语	English		Yīngyǔ
+难	difficult			nán
+同学	classmate		tóngxué
+男生	boy student		nánshēng
+男	boy/male		nán
+女生 	girl student		nǚ shēng
+女	girl/female		nǚ
+都	all			dōu
+请	please			qǐng
+进	enter			jìn
+外国	foreign country	wàiguó
+朋友	friend			péngyou
+名字	name			míngzi
+哪	which			nǎ/něi
+国	country		guó
+ */
   /* Lesson 5 */
   { id: 21, character: '一月', pinyin:'yīyuè', english: 'January'},			
   { id: 22, character: '二月', pinyin:'èryuè', english: 'February'},			
