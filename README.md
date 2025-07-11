@@ -1,6 +1,8 @@
-# Mandarin Flashcards
+# Mandarin Flashcards using Claude
 
-This project is a web application designed to help users learn Mandarin vocabulary using flashcards. It features a React-based frontend and an Express.js backend.
+An experiment of using Claude to generate a flashcard card app for studying Mandarin using Typescript, React, and Node. 
+
+Don't judge me for the code quality since this is what Claude created :) 
 
 ## Getting Started
 
