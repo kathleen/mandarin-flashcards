@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Flashcard from './components/Flashcard';
 import ResultScreen from './components/ResultScreen';
+import AdminPage from './components/AdminPage';
 import { FlashcardData, FlashcardStats } from './types';
 
 const App: React.FC = () => {
+  const [page, setPage] = useState<'flashcards' | 'admin'>('flashcards');
   const [cards, setCards] = useState<FlashcardData[]>([]);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [stats, setStats] = useState<FlashcardStats>({
@@ -80,6 +82,22 @@ const App: React.FC = () => {
     }
   };
   
+  if (page === 'admin') {
+    return (
+      <div>
+        <nav className="bg-gray-800 text-white px-4 py-2 flex gap-4">
+          <button onClick={() => setPage('flashcards')} className="hover:underline">
+            Flashcards
+          </button>
+          <button onClick={() => setPage('admin')} className="font-bold underline">
+            Admin
+          </button>
+        </nav>
+        <AdminPage />
+      </div>
+    );
+  }
+
   if (isLoading) {
     return <div className="text-center p-6">Loading flashcards...</div>;
   }
@@ -103,20 +121,30 @@ const App: React.FC = () => {
   }
   
   return (
-    <div className="container mx-auto p-4">
-      <header className="mb-8 text-center">
-        <h1 className="text-3xl font-bold">Mandarin Chinese Flashcards</h1>
-        <p className="text-gray-600">
-          Progress: {currentCardIndex + 1} / {cards.length}
-        </p>
-      </header>
-      
-      {cards.length > 0 && (
-        <Flashcard
-          card={cards[currentCardIndex]}
-          onAnswer={handleAnswer}
-        />
-      )}
+    <div>
+      <nav className="bg-gray-800 text-white px-4 py-2 flex gap-4">
+        <button onClick={() => setPage('flashcards')} className="font-bold underline">
+          Flashcards
+        </button>
+        <button onClick={() => setPage('admin')} className="hover:underline">
+          Admin
+        </button>
+      </nav>
+      <div className="container mx-auto p-4">
+        <header className="mb-8 text-center">
+          <h1 className="text-3xl font-bold">Mandarin Chinese Flashcards</h1>
+          <p className="text-gray-600">
+            Progress: {currentCardIndex + 1} / {cards.length}
+          </p>
+        </header>
+
+        {cards.length > 0 && (
+          <Flashcard
+            card={cards[currentCardIndex]}
+            onAnswer={handleAnswer}
+          />
+        )}
+      </div>
     </div>
   );
 };
