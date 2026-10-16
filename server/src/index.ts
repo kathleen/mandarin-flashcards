@@ -1,6 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
+import cookieParser from 'cookie-parser';
+import authRouter from './auth';
+import { createProgressRouter } from './progress';
 import { FlashcardData } from '../../src/types';
 
 const app = express();
@@ -89,10 +92,19 @@ const flashcards: FlashcardData[] = [
 ];
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CLIENT_ORIGIN || 'http://localhost:3000',
+    credentials: true
+  })
+);
 app.use(express.json());
+app.use(cookieParser());
 
 // API endpoints
+app.use('/api/auth', authRouter);
+app.use('/api/progress', createProgressRouter(new Set(flashcards.map(c => c.id))));
+
 app.get('/api/flashcards', (req, res) => {
   res.json(flashcards);
 });
